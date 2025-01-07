@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'daily_journal.dart';
+import 'settings.dart'; // Import the settings page
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,6 +32,20 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Mental Health App'),
         centerTitle: true,
         backgroundColor: Colors.blue,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              // Navigate to the settings page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AccessibilitySettingsPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -54,9 +69,8 @@ class _HomePageState extends State<HomePage> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueAccent,
-        unselectedItemColor:
-            Colors.grey, // Add a clear color for unselected items
-        showUnselectedLabels: true, // Ensure unselected labels are shown
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
     );
