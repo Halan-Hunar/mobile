@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 
 class SensitiveScreen extends StatefulWidget {
-  const SensitiveScreen({Key? key}) : super(key: key);
+  const SensitiveScreen({super.key});
 
   @override
   _SensitiveScreenState createState() => _SensitiveScreenState();

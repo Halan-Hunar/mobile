@@ -33,9 +33,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFBEFF8), // Pastel background
+      backgroundColor: const Color.fromARGB(255, 235, 196, 185), // Pastel background
       appBar: AppBar(
-        backgroundColor: const Color(0xFFF5A8C4), // Pastel pink
+        backgroundColor: const Color.fromARGB(255, 239, 134, 105), // Pastel pink
         title: const Text(
           'Welcome to CalmSpace',
           style: TextStyle(
@@ -208,7 +208,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),

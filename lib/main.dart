@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'pages/accessibility_settings.dart';
 import 'pages/login_page.dart'; // Import the LoginPage
+import 'screens/home_page.dart'; // Import the HomePage (if needed later)
 
 void main() {
   runApp(
@@ -20,15 +21,17 @@ class MyApp extends StatelessWidget {
     return Consumer<AccessibilitySettings>(
       builder: (context, settings, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false, // Remove debug banner
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             brightness: settings.darkMode ? Brightness.dark : Brightness.light,
+            scaffoldBackgroundColor: settings.darkMode
+                ? const Color(0xFF1E1E1E) // Lighter dark mode
+                : const Color(0xFFFBEFF8), // Light pastel background
             textTheme: TextTheme(
               bodyMedium: TextStyle(fontSize: settings.fontSize),
             ),
-            primaryColor: settings.highContrast ? Colors.black : Colors.blue,
           ),
-          home: LoginPage(), // Start with LoginPage
+          home: LoginPage(), // Set the LoginPage as the initial screen
         );
       },
     );

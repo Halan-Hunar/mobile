@@ -25,7 +25,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 239, 134, 105),
       resizeToAvoidBottomInset: true,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -49,7 +49,7 @@ class SignUpPage extends StatelessWidget {
                   Text(
                     'Create your account',
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: const Color.fromARGB(255, 255, 92, 92),
                       fontSize: 16,
                     ),
                   ),
@@ -97,7 +97,7 @@ class SignUpPage extends StatelessWidget {
                     children: [
                       Text(
                         'Already a member?',
-                        style: TextStyle(color: Colors.grey[700]),
+                        style: TextStyle(color: const Color.fromARGB(255, 255, 98, 98)),
                       ),
                       const SizedBox(width: 4),
                       GestureDetector(
@@ -112,7 +112,7 @@ class SignUpPage extends StatelessWidget {
                         child: const Text(
                           'Login now',
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: const Color.fromARGB(255, 234, 99, 62),
                             fontWeight: FontWeight.bold,
                           ),
                         ),

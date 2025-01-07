@@ -102,7 +102,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
       appBar: AppBar(
         title: const Text('Daily Journal'),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color(0xFFC8E6C9),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -156,7 +156,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddJournalDialog,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color(0xFFC8E6C9),
         child: const Icon(Icons.add),
       ),
     );

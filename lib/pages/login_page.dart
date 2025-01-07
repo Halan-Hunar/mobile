@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: const Color.fromARGB(255, 239, 134, 105),
       resizeToAvoidBottomInset: true,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
                   // logo
                   const Icon(
                     Icons.lock,
-                    color: Colors.blue,
+                    color: const Color.fromARGB(255, 234, 99, 62),
                     size: 100,
                   ),
 
@@ -53,9 +53,9 @@ class LoginPage extends StatelessWidget {
 
                   // welcome back, you've been missed!
                   Text(
-                    'Welcome back you\'ve been missed!',
+                    'Welcome!',
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: const Color.fromARGB(255, 255, 214, 177),
                       fontSize: 16,
                     ),
                   ),
@@ -88,7 +88,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Text(
                           'Forgot Password?',
-                          style: TextStyle(color: Colors.grey[600]),
+                          style: TextStyle(color: const Color.fromARGB(255, 228, 58, 58)),
                         ),
                       ],
                     ),
@@ -111,20 +111,20 @@ class LoginPage extends StatelessWidget {
                         Expanded(
                           child: Divider(
                             thickness: 0.5,
-                            color: Colors.grey[400],
+                            color: const Color.fromARGB(255, 238, 171, 171),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: Text(
                             'Or continue with',
-                            style: TextStyle(color: Colors.grey[700]),
+                            style: TextStyle(color: const Color.fromARGB(255, 238, 171, 171)),
                           ),
                         ),
                         Expanded(
                           child: Divider(
                             thickness: 0.5,
-                            color: Colors.grey[400],
+                            color: const Color.fromARGB(255, 238, 171, 171),
                           ),
                         ),
                       ],
@@ -154,7 +154,7 @@ class LoginPage extends StatelessWidget {
                         child: const Text(
                           'Register now',
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: const Color.fromARGB(255, 234, 99, 62),
                             fontWeight: FontWeight.bold,
                           ),
                         ),

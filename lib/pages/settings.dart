@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'accessibility_settings.dart';
 
 class AccessibilitySettingsPage extends StatefulWidget {
-  const AccessibilitySettingsPage({Key? key}) : super(key: key);
+  const AccessibilitySettingsPage({super.key});
 
   @override
   _AccessibilitySettingsPageState createState() => _AccessibilitySettingsPageState();
