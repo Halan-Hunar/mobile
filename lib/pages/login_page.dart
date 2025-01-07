@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/my_button.dart';
 import 'package:mobile/components/my_textfield.dart';
-import 'home_page.dart'; // Import the HomePage
+import '../screens/home_page.dart'; // Import the HomePage
 import 'signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,11 +13,18 @@ class LoginPage extends StatelessWidget {
 
   // sign user in method
   void signUserIn(BuildContext context) {
-    // Navigate to the HomePage
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HomePage()),
-    );
+    if (usernameController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+      // Navigate to HomePage
+      Navigator.pushReplacement(
+        context, // Use pushReplacement to prevent going back to LoginPage
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    } else {
+      // Show an error if fields are empty
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter your username and password')),
+      );
+    }
   }
 
   @override

@@ -1,13 +1,17 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-final storage = FlutterSecureStorage();
+class SecureStorage {
+  final _storage = const FlutterSecureStorage();
 
-// Save data securely
-Future<void> saveUserData(String key, String value) async {
-  await storage.write(key: key, value: value);
-}
+  Future<void> saveData(String key, String value) async {
+    await _storage.write(key: key, value: value);
+  }
 
-// Retrieve data securely
-Future<String?> getUserData(String key) async {
-  return await storage.read(key: key);
+  Future<String?> getData(String key) async {
+    return await _storage.read(key: key);
+  }
+
+  Future<void> deleteData(String key) async {
+    await _storage.delete(key: key);
+  }
 }

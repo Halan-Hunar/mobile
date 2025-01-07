@@ -39,3 +39,19 @@ class _SensitiveScreenState extends State<SensitiveScreen> {
     );
   }
 }
+Future<void> _disableScreenshot() async {
+  try {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  } catch (e) {
+    debugPrint("Failed to disable screenshots: $e");
+  }
+}
+
+Future<void> _enableScreenshot() async {
+  try {
+    await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+  } catch (e) {
+    debugPrint("Failed to enable screenshots: $e");
+  }
+}
+

@@ -8,7 +8,7 @@ class DailyJournalPage extends StatefulWidget {
 }
 
 class _DailyJournalPageState extends State<DailyJournalPage> {
-  final List<Map<String, String>> _journals = [];
+  final List<Map<String, String>> _journals = []; // List to store journal entries
 
   void _addJournalEntry(String title, String entry, String mood) {
     setState(() {
@@ -16,7 +16,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
         'title': title,
         'entry': entry,
         'mood': mood
-      }); // Newest entries appear at the top
+      }); // Add new entry to the top of the list
     });
   }
 
@@ -56,8 +56,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
                     const Text('Select your mood:'),
                     Wrap(
                       spacing: 10.0,
-                      children:
-                          ['😊', '😔', '😡', '😌', '😢', '🤔'].map((mood) {
+                      children: ['😊', '😔', '😡', '😌', '😢', '🤔'].map((mood) {
                         return ChoiceChip(
                           label:
                               Text(mood, style: const TextStyle(fontSize: 24)),
@@ -77,7 +76,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context), // Close dialog
               child: const Text('Cancel'),
             ),
             ElevatedButton(
@@ -86,7 +85,7 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
                     entryController.text.isNotEmpty) {
                   _addJournalEntry(
                       titleController.text, entryController.text, selectedMood);
-                  Navigator.pop(context);
+                  Navigator.pop(context); // Close dialog after saving
                 }
               },
               child: const Text('Save'),
@@ -100,6 +99,11 @@ class _DailyJournalPageState extends State<DailyJournalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Daily Journal'),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

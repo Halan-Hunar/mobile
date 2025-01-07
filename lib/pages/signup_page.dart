@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/my_button.dart';
 import 'package:mobile/components/my_textfield.dart';
-import 'home_page.dart'; // Import the HomePage
+import '../screens/home_page.dart'; // Import the HomePage
 import 'login_page.dart'; // Import the LoginPage
 
 class SignUpPage extends StatelessWidget {
