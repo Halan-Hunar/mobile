@@ -4,7 +4,7 @@ import '../pages/daily_journal.dart';
 import '../pages/settings.dart';
 import 'chat_screen.dart';
 import 'guided_meditation_screen.dart';
-import 'TherapistConnectScreen.dart';
+import '../pages/community_space.dart'; // Import Community Space Screen
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   // Define pages for BottomNavigationBar
   static final List<Widget> _pages = [
     const HomeScreen(),
+    const CommunitySpaceScreen(username: '',), // Community Space Page
     const DailyJournalPage(),
     const GuidedMeditationScreen(),
     const TherapistConnectScreen(),
@@ -39,7 +40,6 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
           'Welcome to CalmSpace',
           style: TextStyle(
-            fontFamily: 'Quicksand',
             fontWeight: FontWeight.bold,
             fontSize: 20,
             color: Colors.white,
@@ -68,6 +68,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_rounded),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people_alt_rounded),
+            label: 'Community', // Community Tab
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.note_alt_rounded),
@@ -104,7 +108,6 @@ class HomeScreen extends StatelessWidget {
           const Text(
             'Hello there!',
             style: TextStyle(
-              fontFamily: 'Quicksand',
               fontWeight: FontWeight.bold,
               fontSize: 28,
               color: Color(0xFF454545),
@@ -114,7 +117,6 @@ class HomeScreen extends StatelessWidget {
           const Text(
             'Let’s take a step towards mental well-being.',
             style: TextStyle(
-              fontFamily: 'Quicksand',
               fontSize: 16,
               color: Color(0xFF7A7A7A),
             ),
@@ -136,6 +138,23 @@ class HomeScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const GuidedMeditationScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 20),
+                // Community Card
+                _buildFeatureCard(
+                  title: 'Community Space',
+                  subtitle: 'Share and connect with others',
+                  icon: Icons.people_alt_rounded,
+                  color: const Color(0xFFBBDEFB), // Pastel blue
+                  onTap: () {
+                    // Navigate to Community Space Screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CommunitySpaceScreen(username: '',),
                       ),
                     );
                   },
@@ -222,7 +241,6 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     title,
                     style: const TextStyle(
-                      fontFamily: 'Quicksand',
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       color: Color(0xFF454545),
@@ -232,7 +250,6 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     subtitle,
                     style: const TextStyle(
-                      fontFamily: 'Quicksand',
                       fontSize: 14,
                       color: Color(0xFF7A7A7A),
                     ),
